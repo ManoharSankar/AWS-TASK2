@@ -1,0 +1,50 @@
+
+Using AWS Management Console
+
+Create a VPC:
+
+Open the Amazon VPC console.
+Click on "Your VPCs" from the left panel.
+Click "Create VPC".
+Enter a name and a CIDR block (e.g., 10.0.0.0/16).
+Choose the Tenancy (default or dedicated).
+Click "Create VPC".
+
+Create Subnets:
+
+Go to "Subnets" on the left panel.
+Click "Create Subnet".
+Select the VPC you created earlier.
+Enter a name and Availability Zone.
+Enter a CIDR block for the subnet (e.g., 10.0.1.0/24).
+Click "Create Subnet".
+Repeat for additional subnets as needed (e.g., one public and one private subnet).
+
+Create an Internet Gateway (IGW):
+
+Click on "Internet Gateways" on the left panel.
+Click "Create Internet Gateway".
+Enter a name.
+Click "Create Internet Gateway".
+Attach the Internet Gateway to your VPC:
+Select the IGW you created.
+Click "Actions" > "Attach to VPC".
+Choose your VPC and click "Attach".
+
+Create a Route Table:
+
+Go to "Route Tables" on the left panel.
+Click "Create Route Table".
+Enter a name and choose the VPC.
+Click "Create Route Table".
+Select the route table, then click "Edit routes".
+Click "Add route" and enter 0.0.0.0/0 as the destination and select the Internet Gateway as the target.
+Click "Save routes".
+
+Associate the Route Table with Subnets:
+
+Go to the "Subnets associations" tab for the route table.
+Click "Edit subnet associations".
+Select the subnets (e.g., public subnet) to associate with this route table.
+Click "Save associations".
+
